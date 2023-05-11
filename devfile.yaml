@@ -15,7 +15,7 @@ components:
         - value: quarkus_test
           name: POSTGRES_DB
       volumeMounts:
-      - name: postgresql-data
+      - name: m2
         path: /var/lib/postgresql/data
       memoryLimit: 512Mi
   - name: tools
