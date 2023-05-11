@@ -39,7 +39,7 @@ components:
         - value: quarkus_test
           name: POSTGRESQL_PASSWORD
         - value: quarkus_test
-          name: POSTGRESQL_DB
+          name: POSTGRESQL_DATABASE
         - name: PGDATA
           value: /tmp/pgdata
       memoryLimit: 512Mi
