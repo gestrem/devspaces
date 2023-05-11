@@ -26,7 +26,7 @@ components:
   - name: m2
     volume:
       size: 1G
-  - name: database
+  - name: db-pg
     container:
       image: quay.io/centos7/postgresql-13-centos7@sha256:994f5c622e2913bda1c4a7fa3b0c7e7f75e7caa3ac66ff1ed70ccfe65c40dd75
       endpoints:
@@ -35,11 +35,11 @@ components:
           exposure: none
       env:
         - value: quarkus_test
-          name: POSTGRES_USER
+          name: POSTGRESQL_USER
         - value: quarkus_test
-          name: POSTGRES_PASSWORD
+          name: POSTGRESQL_PASSWORD
         - value: quarkus_test
-          name: POSTGRES_DB
+          name: POSTGRESQL_DB
         - name: PGDATA
           value: /tmp/pgdata
       memoryLimit: 512Mi
@@ -61,3 +61,4 @@ commands:
       group:
         kind: run
         isDefault: true
+
