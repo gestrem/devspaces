@@ -1,7 +1,23 @@
 schemaVersion: 2.1.0
 metadata:
-  name: quarkus-quickstart
+  name: mad-demo
 components:
+  - name: database
+    container:
+      image: registry.redhat.io/rhel8/postgresql-12:latest
+      env:
+        - name: PGDATA # workaround not using volume: chmod 700 in entrypoint that may fail in some volume class ... It will be ephemeral unfortunately
+          value: /tmp/pgdata
+        - value: quarkus_test
+          name: POSTGRES_USER
+        - value: quarkus_test
+          name: POSTGRES_PASSWORD
+        - value: quarkus_test
+          name: POSTGRES_DB
+      volumeMounts:
+      - name: postgresql-data
+        path: /var/lib/postgresql/data
+      memoryLimit: 512Mi
   - name: tools
     container:
       image: registry.redhat.io/devspaces/udi-rhel8:3.5 
@@ -16,7 +32,7 @@ components:
         - exposure: public
           name: hello-greeting-endpoint
           protocol: http
-          targetPort: 8080
+          targetPort: 5432
           path: /hello/greeting/devspaces-user
       volumeMounts:
         - name: m2
