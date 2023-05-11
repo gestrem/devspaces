@@ -32,7 +32,7 @@ components:
       endpoints:
         - name: postgres
           targetPort: 5432
-          exposure: none
+          exposure: public
       env:
         - value: quarkus_test
           name: POSTGRESQL_USER
