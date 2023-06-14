@@ -2,7 +2,7 @@ schemaVersion: 2.1.0
 metadata:
   name: mad-demo
 components:
-  - name: tools-1
+  - name: tools
     container:
       image: registry.redhat.io/devspaces/udi-rhel8:3.5 
       env:
@@ -14,10 +14,10 @@ components:
           protocol: tcp
           targetPort: 5005
         - exposure: public
-          name: hello-greeting-endpoint
+          name: fruit-catalog
           protocol: http
           targetPort: 8080
-          path: /hello/greeting/devspaces-user
+          path: /index.html
       volumeMounts:
         - name: m2
           path: /home/user/.m2
