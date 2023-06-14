@@ -16,10 +16,17 @@ While the code is surprisingly simple, under the hood this is using:
 
 ## Requirements
 
+### Option 1 : start a Devspaces from your browser 
+
+[![Contribute](https://www.eclipse.org/che/factory-contribute.svg)](https://devspaces.apps.cluster-g75tk.g75tk.sandbox2638.opentlc.com#https://github.com/gestrem/devspaces)
+
+### Option 2 : Set up your workstation manually
+
 To compile and run this demo you will need:
 
 - JDK 11+
 - GraalVM
+
 
 In addition, you will need either a PostgreSQL database, or Docker to run one.
 
